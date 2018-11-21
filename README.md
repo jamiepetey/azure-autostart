@@ -1,13 +1,3 @@
 # azure-autostart
 automatically start VM hosts in Azure Cloud
 
-https://docs.microsoft.com/en-us/azure/automation/automation-first-runbook-textual
-
-$Conn = Get-AutomationConnection -Name AzureRunAsConnection
-$ServicePrincipalConnection = Get-AutomationConnection -Name 'AzureRunAsConnection'
-Login-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
-
-$AzureContext = Select-AzureRmSubscription -SubscriptionID $ServicePrincipalConnection.SubscriptionID
-
-Start-AzureRmVM -Name 'vmservername1' -ResourceGroupName 'groupname' -AzureRmContext $AzureContext
-Start-AzureRmVM -Name 'vmservername2' -ResourceGroupName 'groupname' -AzureRmContext $AzureContext
