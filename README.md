@@ -1,5 +1,5 @@
 # azure-autostart
-automatically start VM hosts in Azure
+automatically start VM hosts in Azure Cloud
 
 https://docs.microsoft.com/en-us/azure/automation/automation-first-runbook-textual
 
